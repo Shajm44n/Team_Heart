@@ -1,5 +1,5 @@
 import numpy as np
-from skimage.io import imread
+#from skimage.io import imread
 import cv2
 from keras.preprocessing import image
 from skimage.transform import resize
@@ -13,11 +13,12 @@ def main():
     uploaded_file = st.file_uploader("Choose a file")
 
     if uploaded_file is not None:
-        image=imread(uploaded_file)
+        image=Image.open(uploaded_file)
         st.text("Uploaded Image")
         st.image(image)
-        test_image = cv2.resize(image, (64, 64), interpolation=cv2.INTER_CUBIC)
-        test_image = np.array(test_image, dtype='float32')
+        test_image = np.array(image, dtype='float32')
+        test_image = cv2.resize(test_image, (64, 64), interpolation=cv2.INTER_CUBIC)
+
         test_image = np.expand_dims(test_image, axis=0)
         model = keras.models.load_model('ecg_model_binary.h5')
         result=model.predict(test_image)
