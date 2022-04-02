@@ -40,7 +40,7 @@ def login_user(username,password):
 
 
 def main():
-    st.title("Heart Disease App")
+    st.title("Heart Health Assistance")
     menu = ["Login","SignUp"]
     choice = st.sidebar.selectbox("SignUp/Login",menu)
     # if choice == "Home":
