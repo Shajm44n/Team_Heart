@@ -52,7 +52,7 @@ def main():
         if st.sidebar.checkbox("Login"):
             result = login_user(username,password)
             if result:
-                #st.success("Logged In as {}".format(username))
+                st.success("Logged In as {}".format(username))
                 PAGES = {
                         "Home" :home,
                         "Chat": appv6,
