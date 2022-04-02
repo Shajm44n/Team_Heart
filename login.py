@@ -46,7 +46,7 @@ def main():
     # if choice == "Home":
     #     st.subheader("Home")
     if choice == "Login":
-        st.write("Login Section")
+        st.subheader("Remove all your doubts in matters related to heart 🫀")
         username = st.sidebar.text_input("User Name")
         password = st.sidebar.text_input("Password",type='password')
         if st.sidebar.checkbox("Login"):
